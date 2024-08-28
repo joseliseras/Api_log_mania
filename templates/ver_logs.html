@@ -1,0 +1,39 @@
+<!-- templates/ver_logs.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualización de Logs</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h1>Logs Recibidos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Fecha Evento</th>
+                <th>Servicio</th>
+                <th>Nivel de Severidad</th>
+                <th>Mensaje</th>
+                <th>Fecha Recepción</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for log in logs %}
+            <tr>
+                <td>{{ log.fecha_evento }}</td>
+                <td>{{ log.nombre_servicio }}</td>
+                <td>{{ log.nivel_severidad }}</td>
+                <td>{{ log.mensaje }}</td>
+                <td>{{ log.fecha_recepcion }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
