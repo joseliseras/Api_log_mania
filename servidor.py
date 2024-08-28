@@ -41,10 +41,6 @@ def recibir_log():
 
     return jsonify({"mensaje": "Log recibido correctamente"}), 201
 
-# Continuación de servidor.py
-
-from flask import render_template  # Asegúrate de importar render_template
-
 # Endpoint para visualizar los logs en el navegador
 @app.route('/ver_logs', methods=['GET'])
 def ver_logs():
